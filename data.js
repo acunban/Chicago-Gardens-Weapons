@@ -1,78 +1,137 @@
 window.CG_DATA = {
-  "settings": {
-    "dropsPerSpin": 4,
-    "spinDurationMs": 2100,
-    "pauseBetweenRollsMs": 180
-  },
   "factionTiers": {
-    "Tier 1": [
-      "38-special",
-      "chatgpt-image-aug-5-2026-09-17-29-pm",
-      "ruger-lcp",
-      "chatgpt-image-aug-5-2026-09-02-56-pm",
-      "glock-30",
-      "rugersr40",
-      "taurus",
-      "waltherp882"
-    ],
-    "Tier 1.5": [
-      "38-special",
-      "chatgpt-image-aug-5-2026-09-17-29-pm",
-      "ruger-lcp",
-      "chatgpt-image-aug-5-2026-09-02-56-pm",
-      "glock-30",
-      "rugersr40",
-      "taurus",
-      "waltherp882",
-      "g21-vec",
-      "g26-22-stick",
-      "g26-beam",
-      "g26-clear-mag",
-      "glock-17-mod",
-      "glock-27",
-      "glock-30-ext",
-      "glock-43-mos",
-      "xd"
-    ],
-    "Tier 2": [
-      "chatgpt-image-aug-5-2026-09-02-56-pm",
-      "glock-30",
-      "rugersr40",
-      "taurus",
-      "waltherp882",
-      "g21-vec",
-      "g26-22-stick",
-      "g26-beam",
-      "g26-clear-mag",
-      "glock-17-mod",
-      "glock-27",
-      "glock-30-ext",
-      "glock-43-mos",
-      "xd",
-      "arp-red",
-      "chatgpt-image-aug-5-2026-04-55-58-pm",
-      "chatgpt-image-aug-5-2026-05-01-48-pm",
-      "g17-50-image",
-      "g19xc-comp",
-      "g40cammo",
-      "glock-19-foregrip",
-      "tang19x-image",
-      "3-inch-arp-fixed",
-      "arms-draco",
-      "arp-green",
-      "arpwhite",
-      "binaryarp-image",
-      "chatgpt-image-aug-5-2026-04-37-29-pm",
-      "chatgpt-image-aug-5-2026-05-10-35-pm",
-      "chatgpt-image-aug-5-2026-05-14-15-pm",
-      "g19-silverbutton",
-      "ghost27",
-      "ghost27-new",
-      "polymer-g18",
-      "shotgun"
-    ]
+    "Test Drop": {
+      "ids": [
+        "38-special",
+        "chatgpt-image-aug-5-2026-09-17-29-pm",
+        "ruger-lcp",
+        "glock-30",
+        "rugersr40",
+        "chatgpt-image-aug-5-2026-09-02-56-pm",
+        "taurus",
+        "waltherp882"
+      ],
+      "count": 2
+    },
+    "Tier 1": {
+      "ids": [
+        "38-special",
+        "chatgpt-image-aug-5-2026-09-17-29-pm",
+        "ruger-lcp",
+        "glock-30",
+        "rugersr40",
+        "chatgpt-image-aug-5-2026-09-02-56-pm",
+        "taurus",
+        "waltherp882"
+      ],
+      "count": 4
+    },
+    "Tier 1.5": {
+      "ids": [
+        "38-special",
+        "chatgpt-image-aug-5-2026-09-17-29-pm",
+        "ruger-lcp",
+        "glock-30",
+        "rugersr40",
+        "chatgpt-image-aug-5-2026-09-02-56-pm",
+        "taurus",
+        "waltherp882",
+        "g21-vec",
+        "g26-22-stick",
+        "g26-beam",
+        "g26-clear-mag",
+        "glock-17-mod",
+        "glock-27",
+        "glock-30-ext",
+        "glock-43-mos",
+        "xd"
+      ],
+      "count": 4
+    },
+    "Tier 2": {
+      "ids": [
+        "glock-30",
+        "rugersr40",
+        "chatgpt-image-aug-5-2026-09-02-56-pm",
+        "taurus",
+        "waltherp882",
+        "g21-vec",
+        "g26-22-stick",
+        "g26-beam",
+        "g26-clear-mag",
+        "glock-17-mod",
+        "glock-27",
+        "glock-30-ext",
+        "glock-43-mos",
+        "xd",
+        "arp-red",
+        "g17-50-image",
+        "g19x-incog",
+        "g19xc-comp",
+        "g40cammo",
+        "glock-19-foregrip",
+        "chatgpt-image-aug-5-2026-04-55-58-pm",
+        "chatgpt-image-aug-5-2026-05-01-48-pm",
+        "tang19x-image",
+        "chatgpt-image-aug-5-2026-05-14-15-pm",
+        "3-inch-arp-fixed",
+        "arms-draco",
+        "arp-green",
+        "arpwhite",
+        "binaryarp-image",
+        "chatgpt-image-aug-5-2026-04-37-29-pm",
+        "g19-silverbutton",
+        "chatgpt-image-aug-5-2026-05-10-35-pm",
+        "ghost27-new",
+        "polymer-g18",
+        "shotgun",
+        "zpap"
+      ],
+      "count": 6
+    }
   },
-  "weapons": [
+  "drugTiers": {
+    "Tier 1": {
+      "ids": [
+        "apple-pie",
+        "twix-mudslide",
+        "frosted-flakes",
+        "rasprilla",
+        "sprinkzz-lucky-charms"
+      ],
+      "count": 4
+    },
+    "Tier 1.5": {
+      "ids": [
+        "apple-pie",
+        "twix-mudslide",
+        "frosted-flakes",
+        "rasprilla",
+        "sprinkzz-lucky-charms"
+      ],
+      "count": 4
+    },
+    "Tier 2": {
+      "ids": [
+        "twix-mudslide",
+        "box",
+        "frosted-flakes",
+        "sprinkzz-lucky-charms",
+        "visa-8oz",
+        "whole-thang-gr",
+        "whole-thang-wh"
+      ],
+      "count": 6
+    }
+  },
+  "guns": [
+    {
+      "id": "gbg-10-milli",
+      "name": "GBG 10 Milli",
+      "image": "gbg-10-milli.webp",
+      "stars": 0,
+      "sourceName": "GBG 10 Milli.png"
+    },
     {
       "id": "38-special",
       "name": ".38 Special",
@@ -82,7 +141,7 @@ window.CG_DATA = {
     },
     {
       "id": "chatgpt-image-aug-5-2026-09-17-29-pm",
-      "name": "Custom Gun 07",
+      "name": "Hellcat 9mm",
       "image": "chatgpt-image-aug-5-2026-09-17-29-pm.webp",
       "stars": 1,
       "sourceName": "ChatGPT Image Aug 5, 2026, 09_17_29 PM.png"
@@ -93,13 +152,6 @@ window.CG_DATA = {
       "image": "ruger-lcp.webp",
       "stars": 1,
       "sourceName": "Ruger LCP.png"
-    },
-    {
-      "id": "chatgpt-image-aug-5-2026-09-02-56-pm",
-      "name": "Custom Gun 06",
-      "image": "chatgpt-image-aug-5-2026-09-02-56-pm.webp",
-      "stars": 2,
-      "sourceName": "ChatGPT Image Aug 5, 2026, 09_02_56 PM.png"
     },
     {
       "id": "glock-30",
@@ -114,6 +166,13 @@ window.CG_DATA = {
       "image": "rugersr40.webp",
       "stars": 2,
       "sourceName": "RugerSR40.png"
+    },
+    {
+      "id": "chatgpt-image-aug-5-2026-09-02-56-pm",
+      "name": "SIG P320",
+      "image": "chatgpt-image-aug-5-2026-09-02-56-pm.webp",
+      "stars": 2,
+      "sourceName": "ChatGPT Image Aug 5, 2026, 09_02_56 PM.png"
     },
     {
       "id": "taurus",
@@ -200,25 +259,17 @@ window.CG_DATA = {
       "sourceName": "ARP RED.png"
     },
     {
-      "id": "chatgpt-image-aug-5-2026-04-55-58-pm",
-      "name": "Custom Gun 02",
-      "image": "chatgpt-image-aug-5-2026-04-55-58-pm.webp",
-      "stars": 4,
-      "sourceName": "ChatGPT Image Aug 5, 2026, 04_55_58 PM.png"
-    },
-    {
-      "id": "chatgpt-image-aug-5-2026-05-01-48-pm",
-      "name": "Custom Gun 03",
-      "image": "chatgpt-image-aug-5-2026-05-01-48-pm.webp",
-      "stars": 4,
-      "sourceName": "ChatGPT Image Aug 5, 2026, 05_01_48 PM.png"
-    },
-    {
       "id": "g17-50-image",
       "name": "G17 50",
       "image": "g17-50-image.webp",
       "stars": 4,
       "sourceName": "g17 50 image.png"
+    },
+    {
+      "id": "g19x-incog",
+      "name": "G19x Incog",
+      "image": "g19x-incog.webp",
+      "stars": 4
     },
     {
       "id": "g19xc-comp",
@@ -242,11 +293,32 @@ window.CG_DATA = {
       "sourceName": "Glock 19 ForeGrip.png"
     },
     {
+      "id": "chatgpt-image-aug-5-2026-04-55-58-pm",
+      "name": "PSA Black Drum",
+      "image": "chatgpt-image-aug-5-2026-04-55-58-pm.webp",
+      "stars": 4,
+      "sourceName": "ChatGPT Image Aug 5, 2026, 04_55_58 PM.png"
+    },
+    {
+      "id": "chatgpt-image-aug-5-2026-05-01-48-pm",
+      "name": "PSA Tan Drum",
+      "image": "chatgpt-image-aug-5-2026-05-01-48-pm.webp",
+      "stars": 4,
+      "sourceName": "ChatGPT Image Aug 5, 2026, 05_01_48 PM.png"
+    },
+    {
       "id": "tang19x-image",
       "name": "Tan G19X",
       "image": "tang19x-image.webp",
       "stars": 4,
       "sourceName": "TanG19x Image.png"
+    },
+    {
+      "id": "chatgpt-image-aug-5-2026-05-14-15-pm",
+      "name": "100 Round G40",
+      "image": "chatgpt-image-aug-5-2026-05-14-15-pm.webp",
+      "stars": 5,
+      "sourceName": "ChatGPT Image Aug 5, 2026, 05_14_15 PM.png"
     },
     {
       "id": "3-inch-arp-fixed",
@@ -285,24 +357,10 @@ window.CG_DATA = {
     },
     {
       "id": "chatgpt-image-aug-5-2026-04-37-29-pm",
-      "name": "Custom Gun 01",
+      "name": "Black Draco",
       "image": "chatgpt-image-aug-5-2026-04-37-29-pm.webp",
       "stars": 5,
       "sourceName": "ChatGPT Image Aug 5, 2026, 04_37_29 PM.png"
-    },
-    {
-      "id": "chatgpt-image-aug-5-2026-05-10-35-pm",
-      "name": "Custom Gun 04",
-      "image": "chatgpt-image-aug-5-2026-05-10-35-pm.webp",
-      "stars": 5,
-      "sourceName": "ChatGPT Image Aug 5, 2026, 05_10_35 PM.png"
-    },
-    {
-      "id": "chatgpt-image-aug-5-2026-05-14-15-pm",
-      "name": "Custom Gun 05",
-      "image": "chatgpt-image-aug-5-2026-05-14-15-pm.webp",
-      "stars": 5,
-      "sourceName": "ChatGPT Image Aug 5, 2026, 05_14_15 PM.png"
     },
     {
       "id": "g19-silverbutton",
@@ -312,15 +370,15 @@ window.CG_DATA = {
       "sourceName": "G19 SilverButton.png"
     },
     {
-      "id": "ghost27",
-      "name": "Ghost 27",
-      "image": "ghost27.webp",
+      "id": "chatgpt-image-aug-5-2026-05-10-35-pm",
+      "name": "G20 Turk",
+      "image": "chatgpt-image-aug-5-2026-05-10-35-pm.webp",
       "stars": 5,
-      "sourceName": "Ghost27.png"
+      "sourceName": "ChatGPT Image Aug 5, 2026, 05_10_35 PM.png"
     },
     {
       "id": "ghost27-new",
-      "name": "Ghost 27 New",
+      "name": "Ghost27Button",
       "image": "ghost27-new.webp",
       "stars": 5,
       "sourceName": "Ghost27 new.png"
@@ -340,11 +398,70 @@ window.CG_DATA = {
       "sourceName": "shotgun.png"
     },
     {
-      "id": "gbg-10-milli",
-      "name": "GBG 10 Milli",
-      "image": "gbg-10-milli.webp",
-      "stars": 0,
-      "sourceName": "GBG 10 Milli.png"
+      "id": "zpap",
+      "name": "Zpap",
+      "image": "zpap.webp",
+      "stars": 5
     }
-  ]
+  ],
+  "drugs": [
+    {
+      "id": "apple-pie",
+      "name": "Apple Pie",
+      "image": "apple-pie.webp",
+      "stars": 1
+    },
+    {
+      "id": "twix-mudslide",
+      "name": "Twix Mudslide",
+      "image": "twix-mudslide.webp",
+      "stars": 2
+    },
+    {
+      "id": "box",
+      "name": "Box",
+      "image": "box.webp",
+      "stars": 4
+    },
+    {
+      "id": "frosted-flakes",
+      "name": "Frosted Flakes",
+      "image": "frosted-flakes.webp",
+      "stars": 2
+    },
+    {
+      "id": "rasprilla",
+      "name": "Rasprilla",
+      "image": "rasprilla.webp",
+      "stars": 1
+    },
+    {
+      "id": "sprinkzz-lucky-charms",
+      "name": "Sprinkzz Lucky Charms",
+      "image": "sprinkzz-lucky-charms.webp",
+      "stars": 2
+    },
+    {
+      "id": "visa-8oz",
+      "name": "Visa 8oz",
+      "image": "visa-8oz.webp",
+      "stars": 4
+    },
+    {
+      "id": "whole-thang-gr",
+      "name": "Whole Thang GR",
+      "image": "whole-thang-gr.webp",
+      "stars": 4
+    },
+    {
+      "id": "whole-thang-wh",
+      "name": "Whole Thang WH",
+      "image": "whole-thang-wh.webp",
+      "stars": 4
+    }
+  ],
+  "settings": {
+    "spinDurationMs": 2100,
+    "pauseBetweenRollsMs": 180
+  }
 };

@@ -3,47 +3,91 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Chicago Gardens Weapon Tiers</title>
+  <title>Chicago Gardens Drops</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="site">
-    <header class="header">
-      <h1>Chicago Gardens Weapon Tiers</h1>
-    </header>
+  <div class="layout">
+    <aside class="sidebar">
+      <button class="nav-btn active" data-view="factionView">Faction Drop</button>
+      <button class="nav-btn" data-view="drugView">Drug Drop</button>
+    </aside>
 
-    <section class="randomizer">
-      <h2>Randomize</h2>
-      <div class="divider"></div>
-      <p>Simulate a faction drop spin</p>
+    <main class="main">
+      <section id="factionView" class="view active">
+        <header class="page-header">
+          <h1>Chicago Gardens Faction Drops</h1>
+        </header>
 
-      <div class="controls">
-        <label for="tierSelect">Choose Tier:</label>
-        <select id="tierSelect"></select>
-        <button id="spinButton" type="button">Spin</button>
-      </div>
+        <section class="randomizer">
+          <h2>Randomize</h2>
+          <div class="divider"></div>
+          <p>Simulate a faction drop spin</p>
 
-      <div class="spinner" id="spinner">
-        <div class="fade fade-left"></div>
-        <div class="fade fade-right"></div>
-        <div class="reel" id="reel"></div>
-        <div class="picker"></div>
-      </div>
+          <div class="controls">
+            <label for="factionTierSelect">Choose Tier:</label>
+            <select id="factionTierSelect"></select>
+            <button id="factionSpinButton" type="button">Spin</button>
+          </div>
 
-      <h3>Your drops</h3>
-      <div class="drops" id="drops" aria-live="polite"></div>
-    </section>
+          <div class="spinner" id="factionSpinner">
+            <div class="fade fade-left"></div>
+            <div class="fade fade-right"></div>
+            <div class="reel" id="factionReel"></div>
+            <div class="picker"></div>
+          </div>
 
-    <section class="tiers">
-      <h2>Weapon Tiers</h2>
-      <div class="divider"></div>
-      <p class="tier-subtitle">Chicago Gardens weapon rarity list</p>
-      <div id="tierSections"></div>
-    </section>
-  </main>
+          <h3>Your drops</h3>
+          <div class="drops" id="factionDrops"></div>
+        </section>
+
+        <section class="tiers">
+          <h2>Weapon Tiers</h2>
+          <div class="divider"></div>
+          <p class="section-copy">Chicago Gardens weapon rarity list</p>
+          <div id="gunTierSections"></div>
+        </section>
+      </section>
+
+      <section id="drugView" class="view">
+        <header class="page-header">
+          <h1>Chicago Gardens Drug Drops</h1>
+        </header>
+
+        <section class="randomizer">
+          <h2>Randomize</h2>
+          <div class="divider"></div>
+          <p>Simulate a drug drop spin</p>
+
+          <div class="controls">
+            <label for="drugTierSelect">Choose Tier:</label>
+            <select id="drugTierSelect"></select>
+            <button id="drugSpinButton" type="button">Spin</button>
+          </div>
+
+          <div class="spinner" id="drugSpinner">
+            <div class="fade fade-left"></div>
+            <div class="fade fade-right"></div>
+            <div class="reel" id="drugReel"></div>
+            <div class="picker"></div>
+          </div>
+
+          <h3>Your drops</h3>
+          <div class="drops" id="drugDrops"></div>
+        </section>
+
+        <section class="tiers">
+          <h2>Drug Tiers</h2>
+          <div class="divider"></div>
+          <p class="section-copy">Chicago Gardens product rarity list</p>
+          <div id="drugTierSections"></div>
+        </section>
+      </section>
+    </main>
+  </div>
 
   <script src="data.js"></script>
   <script src="app.js"></script>
