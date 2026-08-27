@@ -1,260 +1,48 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#050507">
-  <title>Chicago Gardens Faction Drops</title>
-  <style>
-:root{
-  --bg:#070709;
-  --panel:#111118;
-  --panel-border:#272731;
-  --text:#fff;
-  --purple:#a54cff;
-  --purple-soft:#be74ff;
-  --cyan:#29edff;
-  --yellow:#ffe300;
-  --sidebar:#08080b;
-  --card-w:100px;
-  --card-h:100px;
-  --gap:10px;
-}
-*{box-sizing:border-box}
-html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text)}
-body{font-family:"Trebuchet MS","Arial Narrow",Arial,sans-serif}
-button,select{font:inherit}
-.site-layout{display:grid;grid-template-columns:190px minmax(0,1fr);min-height:100vh}
-.sidebar{padding:30px 24px;background:var(--sidebar);border-right:1px solid #1c1c23}
-.sidebar-inner{position:sticky;top:24px;display:grid;gap:12px}
-.nav-link{
-  display:flex;align-items:center;justify-content:center;
-  min-height:42px;padding:0 12px;text-decoration:none;
-  border:2px solid var(--purple);border-radius:6px;
-  background:#2a2337;color:var(--purple-soft);font-size:16px
-}
-.nav-link.active{background:#352748;box-shadow:0 0 14px rgba(165,76,255,.22)}
-.content{min-width:0;padding:22px 28px 80px}
-.title{margin:0;text-align:center;color:var(--purple);font-size:36px;font-weight:400;letter-spacing:-1px}
-.randomizer,.tier-list{text-align:center}
-.randomizer{margin-top:22px}
-.section-title{margin:0;color:var(--purple);font-size:20px;font-weight:400}
-.divider{width:min(900px,100%);height:1px;margin:5px auto 0;background:#3c3c43}
-.subtitle{margin:3px 0 10px;color:var(--cyan);font-size:16px}
-.controls{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px;margin-bottom:18px;font-size:16px}
-select{min-width:140px;height:36px;padding:0 36px 0 12px;border:1px solid #464653;border-radius:5px;background:#252530;color:var(--yellow);outline:none}
-.spin-btn{min-width:74px;height:36px;border:2px solid var(--purple);border-radius:5px;background:#2a2932;color:var(--purple-soft);cursor:pointer}
-.spin-btn:disabled{opacity:.55;cursor:not-allowed}
-.spinner{position:relative;width:min(900px,100%);height:182px;margin:0 auto;overflow:hidden;border:1px solid var(--panel-border);border-radius:14px;background:radial-gradient(circle at 50% 125%,rgba(64,58,98,.22),transparent 58%),var(--panel);box-shadow:0 15px 30px rgba(0,0,0,.34)}
-.reel{position:absolute;left:0;top:40px;display:flex;gap:var(--gap);width:max-content;will-change:transform}
-.reel-card{flex:0 0 var(--card-w);width:var(--card-w);height:var(--card-h);overflow:hidden;border-radius:9px;background:#18181e}
-.reel-card img,.drop-card img,.tier-image img{display:block;width:100%;height:100%;object-fit:cover}
-.picker{position:absolute;z-index:5;left:50%;top:28px;width:3px;height:124px;transform:translateX(-50%);background:var(--yellow);box-shadow:0 0 8px rgba(255,227,0,.6)}
-.fade{position:absolute;z-index:4;top:0;bottom:0;width:70px;pointer-events:none}
-.fade.left{left:0;background:linear-gradient(90deg,#111118 4%,rgba(17,17,24,0))}
-.fade.right{right:0;background:linear-gradient(270deg,#111118 4%,rgba(17,17,24,0))}
-.drops-heading{margin:12px 0 10px;color:var(--yellow);font-size:16px;font-weight:400}
-.drops{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;min-height:124px}
-.drop-card{position:relative;width:122px;height:122px;overflow:hidden;border:2px solid #4deeff;border-radius:11px;background:#121218;box-shadow:0 0 12px rgba(77,238,255,.36)}
-.drop-name{position:absolute;z-index:2;top:5px;left:5px;right:5px;overflow:hidden;padding:3px 5px;border:1px solid rgba(255,255,255,.32);border-radius:5px;background:rgba(8,8,11,.72);color:#fff;font-size:11px;white-space:nowrap;text-overflow:ellipsis;text-align:left}
-.tier-list{margin-top:48px}
-.tier-list>h2{margin:0;color:var(--purple);font-size:22px;font-weight:400}
-.tier-block{margin-top:32px}
-.tier-block h3{margin:0 0 14px;font-size:19px;font-weight:400}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(125px,1fr));gap:18px 12px}
-.tier-card{min-width:0}
-.tier-image{width:100%;aspect-ratio:1/1;overflow:hidden;border-radius:10px;background:#15151b}
-.tier-name{margin-top:7px;overflow:hidden;color:#f1f1f4;font-size:11px;white-space:nowrap;text-overflow:ellipsis}
-@media(max-width:850px){
-  .site-layout{grid-template-columns:1fr}
-  .sidebar{padding:14px;border-right:0;border-bottom:1px solid #1c1c23}
-  .sidebar-inner{position:static;grid-template-columns:1fr 1fr}
-  .content{padding:18px 12px 60px}
-  .title{font-size:28px}
-}
-@media(max-width:520px){
-  :root{--card-w:84px;--card-h:84px;--gap:8px}
-  .spinner{height:160px}.reel{top:37px}.picker{top:25px;height:110px}.fade{width:34px}
-  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .drop-card{width:104px;height:104px}
-}
-</style>
-</head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#050507"><title>Chicago Gardens Faction Drops</title><style>
+:root{--bg:#070709;--panel:#111118;--panel-border:#272731;--text:#fff;--purple:#a54cff;--purple-soft:#be74ff;--cyan:#29edff;--yellow:#ffe300;--sidebar:#08080b;--card-w:100px;--card-h:100px;--gap:10px}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text)}body{font-family:"Trebuchet MS","Arial Narrow",Arial,sans-serif}button,select{font:inherit}
+.site-layout{display:grid;grid-template-columns:190px minmax(0,1fr);min-height:100vh}.sidebar{padding:30px 24px;background:var(--sidebar);border-right:1px solid #1c1c23}.sidebar-inner{position:sticky;top:24px;display:grid;gap:12px}
+.nav-link{display:flex;align-items:center;justify-content:center;min-height:42px;padding:0 12px;text-decoration:none;border:2px solid var(--purple);border-radius:6px;background:#2a2337;color:var(--purple-soft);font-size:16px}.nav-link.active{background:#352748;box-shadow:0 0 14px rgba(165,76,255,.22)}
+.content{min-width:0;padding:22px 28px 80px}.title{margin:0;text-align:center;color:var(--purple);font-size:36px;font-weight:400;letter-spacing:-1px}.randomizer,.tier-list{text-align:center}.randomizer{margin-top:22px}.section-title{margin:0;color:var(--purple);font-size:20px;font-weight:400}.divider{width:min(900px,100%);height:1px;margin:5px auto 0;background:#3c3c43}.subtitle{margin:3px 0 10px;color:var(--cyan);font-size:16px}
+.controls{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px;margin-bottom:18px;font-size:16px}select{min-width:140px;height:36px;padding:0 36px 0 12px;border:1px solid #464653;border-radius:5px;background:#252530;color:var(--yellow);outline:none}.spin-btn{min-width:74px;height:36px;border:2px solid var(--purple);border-radius:5px;background:#2a2932;color:var(--purple-soft);cursor:pointer}.spin-btn:disabled{opacity:.55;cursor:not-allowed}
+.spinner{position:relative;width:min(900px,100%);height:182px;margin:0 auto;overflow:hidden;border:1px solid var(--panel-border);border-radius:14px;background:radial-gradient(circle at 50% 125%,rgba(64,58,98,.22),transparent 58%),var(--panel);box-shadow:0 15px 30px rgba(0,0,0,.34)}.reel{position:absolute;left:0;top:40px;display:flex;gap:var(--gap);width:max-content;will-change:transform}.reel-card{flex:0 0 var(--card-w);width:var(--card-w);height:var(--card-h);overflow:hidden;border-radius:9px;background:#18181e}.reel-card img,.drop-card img,.tier-image img{display:block;width:100%;height:100%;object-fit:cover}
+.picker{position:absolute;z-index:5;left:50%;top:28px;width:3px;height:124px;transform:translateX(-50%);background:var(--yellow);box-shadow:0 0 8px rgba(255,227,0,.6)}.fade{position:absolute;z-index:4;top:0;bottom:0;width:70px;pointer-events:none}.fade.left{left:0;background:linear-gradient(90deg,#111118 4%,rgba(17,17,24,0))}.fade.right{right:0;background:linear-gradient(270deg,#111118 4%,rgba(17,17,24,0))}
+.drops-heading{margin:12px 0 10px;color:var(--yellow);font-size:16px;font-weight:400}.drops{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;min-height:124px}.drop-card{position:relative;width:122px;height:122px;overflow:hidden;border:2px solid #4deeff;border-radius:11px;background:#121218;box-shadow:0 0 12px rgba(77,238,255,.36)}.drop-name{position:absolute;z-index:2;top:5px;left:5px;right:5px;overflow:hidden;padding:3px 5px;border:1px solid rgba(255,255,255,.32);border-radius:5px;background:rgba(8,8,11,.72);color:#fff;font-size:11px;white-space:nowrap;text-overflow:ellipsis;text-align:left}
+.tier-list{margin-top:48px}.tier-list>h2{margin:0;color:var(--purple);font-size:22px;font-weight:400}.tier-block{margin-top:32px}.tier-block h3{margin:0 0 14px;font-size:19px;font-weight:400}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(125px,1fr));gap:18px 12px}.tier-card{min-width:0}.tier-image{width:100%;aspect-ratio:1/1;overflow:hidden;border-radius:10px;background:#15151b}.tier-name{margin-top:7px;overflow:hidden;color:#f1f1f4;font-size:11px;white-space:nowrap;text-overflow:ellipsis}
+@media(max-width:850px){.site-layout{grid-template-columns:1fr}.sidebar{padding:14px;border-right:0;border-bottom:1px solid #1c1c23}.sidebar-inner{position:static;grid-template-columns:1fr 1fr}.content{padding:18px 12px 60px}.title{font-size:28px}}
+@media(max-width:520px){:root{--card-w:84px;--card-h:84px;--gap:8px}.spinner{height:160px}.reel{top:37px}.picker{top:25px;height:110px}.fade{width:34px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.drop-card{width:104px;height:104px}}
+</style></head>
 <body>
-  <div class="site-layout">
-    <aside class="sidebar">
-      <div class="sidebar-inner">
-        <a class="nav-link active" href="index.html">Faction Drop</a>
-        <a class="nav-link " href="drugs.html">Drug Drop</a>
-      </div>
-    </aside>
-
-    <main class="content">
-      <h1 class="title">Chicago Gardens Faction Drops</h1>
-
-      <section class="randomizer">
-        <h2 class="section-title">Randomize</h2>
-        <div class="divider"></div>
-        <p class="subtitle">Simulate a faction drop spin</p>
-
-        <div class="controls">
-          <label for="tierSelect">Choose Tier:</label>
-          <select id="tierSelect"></select>
-          <button class="spin-btn" id="spinButton" type="button">Spin</button>
-        </div>
-
-        <div class="spinner" id="spinner">
-          <div class="fade left"></div>
-          <div class="fade right"></div>
-          <div class="reel" id="reel"></div>
-          <div class="picker"></div>
-        </div>
-
-        <h3 class="drops-heading">Your drops</h3>
-        <div class="drops" id="drops"></div>
-      </section>
-
-      <section class="tier-list">
-        <h2>Weapon Tiers</h2>
-        <div class="divider"></div>
-        <p class="subtitle">Chicago Gardens weapon rarity list</p>
-        <div id="tierList"></div>
-      </section>
-    </main>
-  </div>
-
-  <script>
-    const PAGE_DATA={"tiers": {"Test Drop": {"ids": ["38-special", "chatgpt-image-aug-5-2026-09-17-29-pm", "ruger-lcp", "glock-30", "rugersr40", "chatgpt-image-aug-5-2026-09-02-56-pm", "taurus", "waltherp882"], "count": 2}, "Tier 1": {"ids": ["38-special", "chatgpt-image-aug-5-2026-09-17-29-pm", "ruger-lcp", "glock-30", "rugersr40", "chatgpt-image-aug-5-2026-09-02-56-pm", "taurus", "waltherp882"], "count": 4}, "Tier 1.5": {"ids": ["38-special", "chatgpt-image-aug-5-2026-09-17-29-pm", "ruger-lcp", "glock-30", "rugersr40", "chatgpt-image-aug-5-2026-09-02-56-pm", "taurus", "waltherp882", "g21-vec", "g26-22-stick", "g26-beam", "g26-clear-mag", "glock-17-mod", "glock-27", "glock-30-ext", "glock-43-mos", "xd"], "count": 4}, "Tier 2": {"ids": ["glock-30", "rugersr40", "chatgpt-image-aug-5-2026-09-02-56-pm", "taurus", "waltherp882", "g21-vec", "g26-22-stick", "g26-beam", "g26-clear-mag", "glock-17-mod", "glock-27", "glock-30-ext", "glock-43-mos", "xd", "arp-red", "g17-50-image", "g19x-incog", "g19xc-comp", "g40cammo", "glock-19-foregrip", "chatgpt-image-aug-5-2026-04-55-58-pm", "chatgpt-image-aug-5-2026-05-01-48-pm", "tang19x-image", "chatgpt-image-aug-5-2026-05-14-15-pm", "3-inch-arp-fixed", "arms-draco", "arp-green", "arpwhite", "binaryarp-image", "chatgpt-image-aug-5-2026-04-37-29-pm", "g19-silverbutton", "chatgpt-image-aug-5-2026-05-10-35-pm", "ghost27-new", "polymer-g18", "shotgun", "zpap"], "count": 6}}, "items": [{"id": "gbg-10-milli", "name": "GBG 10 Milli", "image": "gbg-10-milli.webp", "stars": 0, "sourceName": "GBG 10 Milli.png"}, {"id": "38-special", "name": ".38 Special", "image": "38-special.webp", "stars": 1, "sourceName": "38 special.png"}, {"id": "chatgpt-image-aug-5-2026-09-17-29-pm", "name": "Hellcat 9mm", "image": "chatgpt-image-aug-5-2026-09-17-29-pm.webp", "stars": 1, "sourceName": "ChatGPT Image Aug 5, 2026, 09_17_29 PM.png"}, {"id": "ruger-lcp", "name": "Ruger LCP", "image": "ruger-lcp.webp", "stars": 1, "sourceName": "Ruger LCP.png"}, {"id": "glock-30", "name": "Glock 30", "image": "glock-30.webp", "stars": 2, "sourceName": "Glock 30.png"}, {"id": "rugersr40", "name": "Ruger SR40", "image": "rugersr40.webp", "stars": 2, "sourceName": "RugerSR40.png"}, {"id": "chatgpt-image-aug-5-2026-09-02-56-pm", "name": "SIG P320", "image": "chatgpt-image-aug-5-2026-09-02-56-pm.webp", "stars": 2, "sourceName": "ChatGPT Image Aug 5, 2026, 09_02_56 PM.png"}, {"id": "taurus", "name": "Taurus", "image": "taurus.webp", "stars": 2, "sourceName": "Taurus.png"}, {"id": "waltherp882", "name": "Walther P88", "image": "waltherp882.webp", "stars": 2, "sourceName": "WaltherP882.png"}, {"id": "g21-vec", "name": "G21 Vector", "image": "g21-vec.webp", "stars": 3, "sourceName": "G21 Vec.png"}, {"id": "g26-22-stick", "name": "G26 22 Stick", "image": "g26-22-stick.webp", "stars": 3, "sourceName": "G26 22 Stick.png"}, {"id": "g26-beam", "name": "G26 Beam", "image": "g26-beam.webp", "stars": 3, "sourceName": "G26 Beam.png"}, {"id": "g26-clear-mag", "name": "G26 Clear Mag", "image": "g26-clear-mag.webp", "stars": 3, "sourceName": "g26 clear mag.png"}, {"id": "glock-17-mod", "name": "Glock 17 Mod", "image": "glock-17-mod.webp", "stars": 3, "sourceName": "Glock 17 Mod.png"}, {"id": "glock-27", "name": "Glock 27", "image": "glock-27.webp", "stars": 3, "sourceName": "Glock 27.png"}, {"id": "glock-30-ext", "name": "Glock 30 Ext", "image": "glock-30-ext.webp", "stars": 3, "sourceName": "Glock 30 Ext.png"}, {"id": "glock-43-mos", "name": "Glock 43 MOS", "image": "glock-43-mos.webp", "stars": 3, "sourceName": "GLock 43 mos.png"}, {"id": "xd", "name": "XD", "image": "xd.webp", "stars": 3, "sourceName": "XD.png"}, {"id": "arp-red", "name": "ARP Red", "image": "arp-red.webp", "stars": 4, "sourceName": "ARP RED.png"}, {"id": "g17-50-image", "name": "G17 50", "image": "g17-50-image.webp", "stars": 4, "sourceName": "g17 50 image.png"}, {"id": "g19x-incog", "name": "G19x Incog", "image": "g19x-incog.webp", "stars": 4}, {"id": "g19xc-comp", "name": "G19XC Comp", "image": "g19xc-comp.webp", "stars": 4, "sourceName": "G19XC COMP.png"}, {"id": "g40cammo", "name": "G40 Camo", "image": "g40cammo.webp", "stars": 4, "sourceName": "g40cammo.png"}, {"id": "glock-19-foregrip", "name": "Glock 19 ForeGrip", "image": "glock-19-foregrip.webp", "stars": 4, "sourceName": "Glock 19 ForeGrip.png"}, {"id": "chatgpt-image-aug-5-2026-04-55-58-pm", "name": "PSA Black Drum", "image": "chatgpt-image-aug-5-2026-04-55-58-pm.webp", "stars": 4, "sourceName": "ChatGPT Image Aug 5, 2026, 04_55_58 PM.png"}, {"id": "chatgpt-image-aug-5-2026-05-01-48-pm", "name": "PSA Tan Drum", "image": "chatgpt-image-aug-5-2026-05-01-48-pm.webp", "stars": 4, "sourceName": "ChatGPT Image Aug 5, 2026, 05_01_48 PM.png"}, {"id": "tang19x-image", "name": "Tan G19X", "image": "tang19x-image.webp", "stars": 4, "sourceName": "TanG19x Image.png"}, {"id": "chatgpt-image-aug-5-2026-05-14-15-pm", "name": "100 Round G40", "image": "chatgpt-image-aug-5-2026-05-14-15-pm.webp", "stars": 5, "sourceName": "ChatGPT Image Aug 5, 2026, 05_14_15 PM.png"}, {"id": "3-inch-arp-fixed", "name": "3 Inch ARP", "image": "3-inch-arp-fixed.webp", "stars": 5, "sourceName": "3 inch arp fixed.png"}, {"id": "arms-draco", "name": "Arms Draco", "image": "arms-draco.webp", "stars": 5, "sourceName": "Arms Draco.png"}, {"id": "arp-green", "name": "ARP Green", "image": "arp-green.webp", "stars": 5, "sourceName": "ARP GREEN.png"}, {"id": "arpwhite", "name": "ARP White", "image": "arpwhite.webp", "stars": 5, "sourceName": "ARPWHITE.png"}, {"id": "binaryarp-image", "name": "Binary ARP", "image": "binaryarp-image.webp", "stars": 5, "sourceName": "BinaryARP image.png"}, {"id": "chatgpt-image-aug-5-2026-04-37-29-pm", "name": "Black Draco", "image": "chatgpt-image-aug-5-2026-04-37-29-pm.webp", "stars": 5, "sourceName": "ChatGPT Image Aug 5, 2026, 04_37_29 PM.png"}, {"id": "g19-silverbutton", "name": "G19 Silver Button", "image": "g19-silverbutton.webp", "stars": 5, "sourceName": "G19 SilverButton.png"}, {"id": "chatgpt-image-aug-5-2026-05-10-35-pm", "name": "G20 Turk", "image": "chatgpt-image-aug-5-2026-05-10-35-pm.webp", "stars": 5, "sourceName": "ChatGPT Image Aug 5, 2026, 05_10_35 PM.png"}, {"id": "ghost27-new", "name": "Ghost27Button", "image": "ghost27-new.webp", "stars": 5, "sourceName": "Ghost27 new.png"}, {"id": "polymer-g18", "name": "Polymer G18", "image": "polymer-g18.webp", "stars": 5, "sourceName": "Polymer G18.png"}, {"id": "shotgun", "name": "Shotgun", "image": "shotgun.webp", "stars": 5, "sourceName": "shotgun.png"}, {"id": "zpap", "name": "Zpap", "image": "zpap.webp", "stars": 5}], "settings": {"spinDurationMs": 2100, "pauseBetweenRollsMs": 180}};
-    
+<div class="site-layout">
+<aside class="sidebar"><div class="sidebar-inner"><a class="nav-link active" href="index.html">Faction Drop</a><a class="nav-link " href="drugs.html">Drug Drop</a></div></aside>
+<main class="content">
+<h1 class="title">Chicago Gardens Faction Drops</h1>
+<section class="randomizer">
+<h2 class="section-title">Randomize</h2><div class="divider"></div><p class="subtitle">Simulate a faction drop spin</p>
+<div class="controls"><label for="tierSelect">Choose Tier:</label><select id="tierSelect"></select><button class="spin-btn" id="spinButton" type="button">Spin</button></div>
+<div class="spinner" id="spinner"><div class="fade left"></div><div class="fade right"></div><div class="reel" id="reel"></div><div class="picker"></div></div>
+<h3 class="drops-heading">Your drops</h3><div class="drops" id="drops"></div>
+</section>
+<section class="tier-list"><h2>Weapon Tiers</h2><div class="divider"></div><p class="subtitle">Chicago Gardens weapon rarity list</p><div id="tierList"></div></section>
+</main></div>
+<script>const PAGE_DATA={"tiers": {"Test Drop": {"ids": ["38-special", "chatgpt-image-aug-5-2026-09-17-29-pm", "ruger-lcp", "glock-30", "rugersr40", "chatgpt-image-aug-5-2026-09-02-56-pm", "taurus", "waltherp882"], "count": 2}, "Tier 1": {"ids": ["38-special", "chatgpt-image-aug-5-2026-09-17-29-pm", "ruger-lcp", "glock-30", "rugersr40", "chatgpt-image-aug-5-2026-09-02-56-pm", "taurus", "waltherp882", "xd", "glock-17-mod", "g21-vec"], "count": 4}, "Tier 1.5": {"ids": ["38-special", "chatgpt-image-aug-5-2026-09-17-29-pm", "ruger-lcp", "glock-30", "rugersr40", "chatgpt-image-aug-5-2026-09-02-56-pm", "taurus", "waltherp882", "g21-vec", "g26-22-stick", "g26-beam", "g26-clear-mag", "glock-17-mod", "glock-27", "glock-30-ext", "glock-43-mos", "xd", "glock-19-foregrip", "g19x-incog", "g40cammo", "chatgpt-image-aug-5-2026-05-01-48-pm", "chatgpt-image-aug-5-2026-04-55-58-pm"], "count": 4}, "Tier 2": {"ids": ["glock-30", "rugersr40", "chatgpt-image-aug-5-2026-09-02-56-pm", "taurus", "waltherp882", "g21-vec", "g26-22-stick", "g26-beam", "g26-clear-mag", "glock-17-mod", "glock-27", "glock-30-ext", "glock-43-mos", "xd", "arp-red", "g17-50-image", "g19x-incog", "g19xc-comp", "g40cammo", "glock-19-foregrip", "chatgpt-image-aug-5-2026-04-55-58-pm", "chatgpt-image-aug-5-2026-05-01-48-pm", "tang19x-image", "chatgpt-image-aug-5-2026-05-14-15-pm", "3-inch-arp-fixed", "arms-draco", "arp-green", "arpwhite", "binaryarp-image", "chatgpt-image-aug-5-2026-04-37-29-pm", "g19-silverbutton", "chatgpt-image-aug-5-2026-05-10-35-pm", "ghost27-new", "polymer-g18", "shotgun", "zpap"], "count": 6}}, "items": [{"id": "g17-joshblock", "name": "G17 JoshBlock", "image": "g17-joshblock.webp", "stars": 0}, {"id": "gbg-10-milli", "name": "GBG 10 Milli", "image": "gbg-10-milli.webp", "stars": 0, "sourceName": "GBG 10 Milli.png"}, {"id": "38-special", "name": ".38 Special", "image": "38-special.webp", "stars": 1, "sourceName": "38 special.png"}, {"id": "chatgpt-image-aug-5-2026-09-17-29-pm", "name": "Hellcat 9mm", "image": "chatgpt-image-aug-5-2026-09-17-29-pm.webp", "stars": 1, "sourceName": "ChatGPT Image Aug 5, 2026, 09_17_29 PM.png"}, {"id": "ruger-lcp", "name": "Ruger LCP", "image": "ruger-lcp.webp", "stars": 1, "sourceName": "Ruger LCP.png"}, {"id": "glock-30", "name": "Glock 30", "image": "glock-30.webp", "stars": 2, "sourceName": "Glock 30.png"}, {"id": "rugersr40", "name": "Ruger SR40", "image": "rugersr40.webp", "stars": 2, "sourceName": "RugerSR40.png"}, {"id": "chatgpt-image-aug-5-2026-09-02-56-pm", "name": "SIG P320", "image": "chatgpt-image-aug-5-2026-09-02-56-pm.webp", "stars": 2, "sourceName": "ChatGPT Image Aug 5, 2026, 09_02_56 PM.png"}, {"id": "taurus", "name": "Taurus", "image": "taurus.webp", "stars": 2, "sourceName": "Taurus.png"}, {"id": "waltherp882", "name": "Walther P88", "image": "waltherp882.webp", "stars": 2, "sourceName": "WaltherP882.png"}, {"id": "g21-vec", "name": "G21 Vector", "image": "g21-vec.webp", "stars": 3, "sourceName": "G21 Vec.png"}, {"id": "g26-22-stick", "name": "G26 22 Stick", "image": "g26-22-stick.webp", "stars": 3, "sourceName": "G26 22 Stick.png"}, {"id": "g26-beam", "name": "G26 Beam", "image": "g26-beam.webp", "stars": 3, "sourceName": "G26 Beam.png"}, {"id": "g26-clear-mag", "name": "G26 Clear Mag", "image": "g26-clear-mag.webp", "stars": 3, "sourceName": "g26 clear mag.png"}, {"id": "glock-17-mod", "name": "Glock 17 Mod", "image": "glock-17-mod.webp", "stars": 3, "sourceName": "Glock 17 Mod.png"}, {"id": "glock-27", "name": "Glock 27", "image": "glock-27.webp", "stars": 3, "sourceName": "Glock 27.png"}, {"id": "glock-30-ext", "name": "Glock 30 Ext", "image": "glock-30-ext.webp", "stars": 3, "sourceName": "Glock 30 Ext.png"}, {"id": "glock-43-mos", "name": "Glock 43 MOS", "image": "glock-43-mos.webp", "stars": 3, "sourceName": "GLock 43 mos.png"}, {"id": "xd", "name": "XD", "image": "xd.webp", "stars": 3, "sourceName": "XD.png"}, {"id": "arp-red", "name": "ARP Red", "image": "arp-red.webp", "stars": 4, "sourceName": "ARP RED.png"}, {"id": "g17-50-image", "name": "G17 50", "image": "g17-50-image.webp", "stars": 4, "sourceName": "g17 50 image.png"}, {"id": "g19x-incog", "name": "G19x Incog", "image": "g19x-incog.webp", "stars": 4}, {"id": "g19xc-comp", "name": "G19XC Comp", "image": "g19xc-comp.webp", "stars": 4, "sourceName": "G19XC COMP.png"}, {"id": "g40cammo", "name": "G40 Camo", "image": "g40cammo.webp", "stars": 4, "sourceName": "g40cammo.png"}, {"id": "glock-19-foregrip", "name": "Glock 19 ForeGrip", "image": "glock-19-foregrip.webp", "stars": 4, "sourceName": "Glock 19 ForeGrip.png"}, {"id": "chatgpt-image-aug-5-2026-04-55-58-pm", "name": "PSA Black Drum", "image": "chatgpt-image-aug-5-2026-04-55-58-pm.webp", "stars": 4, "sourceName": "ChatGPT Image Aug 5, 2026, 04_55_58 PM.png"}, {"id": "chatgpt-image-aug-5-2026-05-01-48-pm", "name": "PSA Tan Drum", "image": "chatgpt-image-aug-5-2026-05-01-48-pm.webp", "stars": 4, "sourceName": "ChatGPT Image Aug 5, 2026, 05_01_48 PM.png"}, {"id": "tang19x-image", "name": "Tan G19X", "image": "tang19x-image.webp", "stars": 4, "sourceName": "TanG19x Image.png"}, {"id": "chatgpt-image-aug-5-2026-05-14-15-pm", "name": "100 Round G40", "image": "chatgpt-image-aug-5-2026-05-14-15-pm.webp", "stars": 5, "sourceName": "ChatGPT Image Aug 5, 2026, 05_14_15 PM.png"}, {"id": "3-inch-arp-fixed", "name": "3 Inch ARP", "image": "3-inch-arp-fixed.webp", "stars": 5, "sourceName": "3 inch arp fixed.png"}, {"id": "arms-draco", "name": "Arms Draco", "image": "arms-draco.webp", "stars": 5, "sourceName": "Arms Draco.png"}, {"id": "arp-green", "name": "ARP Green", "image": "arp-green.webp", "stars": 5, "sourceName": "ARP GREEN.png"}, {"id": "arpwhite", "name": "ARP White", "image": "arpwhite.webp", "stars": 5, "sourceName": "ARPWHITE.png"}, {"id": "binaryarp-image", "name": "Binary ARP", "image": "binaryarp-image.webp", "stars": 5, "sourceName": "BinaryARP image.png"}, {"id": "chatgpt-image-aug-5-2026-04-37-29-pm", "name": "Black Draco", "image": "chatgpt-image-aug-5-2026-04-37-29-pm.webp", "stars": 5, "sourceName": "ChatGPT Image Aug 5, 2026, 04_37_29 PM.png"}, {"id": "g19-silverbutton", "name": "G19 Silver Button", "image": "g19-silverbutton.webp", "stars": 5, "sourceName": "G19 SilverButton.png"}, {"id": "chatgpt-image-aug-5-2026-05-10-35-pm", "name": "G20 Turk", "image": "chatgpt-image-aug-5-2026-05-10-35-pm.webp", "stars": 5, "sourceName": "ChatGPT Image Aug 5, 2026, 05_10_35 PM.png"}, {"id": "ghost27-new", "name": "Ghost27Button", "image": "ghost27-new.webp", "stars": 5, "sourceName": "Ghost27 new.png"}, {"id": "polymer-g18", "name": "Polymer G18", "image": "polymer-g18.webp", "stars": 5, "sourceName": "Polymer G18.png"}, {"id": "shotgun", "name": "Shotgun", "image": "shotgun.webp", "stars": 5, "sourceName": "shotgun.png"}, {"id": "zpap", "name": "Zpap", "image": "zpap.webp", "stars": 5}], "settings": {"spinDurationMs": 2100, "pauseBetweenRollsMs": 180}};
 function randomItem(items){return items[Math.floor(Math.random()*items.length)]}
 function wait(ms){return new Promise(resolve=>setTimeout(resolve,ms))}
-function populateSelect(select,configMap,preferred){
-  select.replaceChildren();
-  Object.keys(configMap).forEach(name=>{
-    const opt=document.createElement("option");
-    opt.value=name;opt.textContent=name;select.appendChild(opt);
-  });
-  if(preferred&&configMap[preferred])select.value=preferred;
-}
-function makeReelCard(item){
-  const card=document.createElement("div");card.className="reel-card";
-  const img=document.createElement("img");img.src=item.image;img.alt=item.name;img.draggable=false;
-  card.appendChild(img);return card;
-}
-function makeDropCard(item){
-  const card=document.createElement("div");card.className="drop-card";
-  const img=document.createElement("img");img.src=item.image;img.alt=item.name;img.draggable=false;
-  const name=document.createElement("div");name.className="drop-name";name.textContent=item.name;
-  card.append(img,name);return card;
-}
-function setupSpinner({selectId,spinId,spinnerId,reelId,dropsId,configMap,itemMap,preferred,settings}){
-  const select=document.getElementById(selectId);
-  const spinBtn=document.getElementById(spinId);
-  const spinner=document.getElementById(spinnerId);
-  const reel=document.getElementById(reelId);
-  const drops=document.getElementById(dropsId);
-  let spinning=false;
+function populateSelect(select,configMap,preferred){select.replaceChildren();Object.keys(configMap).forEach(name=>{const opt=document.createElement("option");opt.value=name;opt.textContent=name;select.appendChild(opt)});if(preferred&&configMap[preferred])select.value=preferred}
+function makeReelCard(item){const card=document.createElement("div");card.className="reel-card";const img=document.createElement("img");img.src=item.image;img.alt=item.name;img.draggable=false;card.appendChild(img);return card}
+function makeDropCard(item){const card=document.createElement("div");card.className="drop-card";const img=document.createElement("img");img.src=item.image;img.alt=item.name;img.draggable=false;const name=document.createElement("div");name.className="drop-name";name.textContent=item.name;card.append(img,name);return card}
+function setupSpinner({selectId,spinId,spinnerId,reelId,dropsId,configMap,itemMap,preferred,settings}){const select=document.getElementById(selectId),spinBtn=document.getElementById(spinId),spinner=document.getElementById(spinnerId),reel=document.getElementById(reelId),drops=document.getElementById(dropsId);let spinning=false;
+function pool(){const cfg=configMap[select.value];return cfg?cfg.ids.map(id=>itemMap.get(id)).filter(Boolean):[]}
+function centerIdle(){if(spinning)return;const items=pool();reel.style.transition="none";reel.replaceChildren();if(!items.length)return;const seq=[];for(let i=0;i<14;i++)seq.push(items[i%items.length]);seq.forEach(item=>reel.appendChild(makeReelCard(item)));requestAnimationFrame(()=>{const first=reel.querySelector(".reel-card");if(!first)return;const w=first.getBoundingClientRect().width,gap=parseFloat(getComputedStyle(reel).gap)||0,step=w+gap,index=Math.min(4,seq.length-1);reel.style.transform=`translateX(${spinner.clientWidth/2-(index*step+w/2)}px)`})}
+async function rollOnce(items){const total=58,winnerIndex=total-7,winner=randomItem(items),seq=Array.from({length:total},()=>randomItem(items));seq[winnerIndex]=winner;reel.style.transition="none";reel.style.transform="translateX(0px)";reel.replaceChildren(...seq.map(makeReelCard));await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));const first=reel.querySelector(".reel-card"),w=first.getBoundingClientRect().width,gap=parseFloat(getComputedStyle(reel).gap)||0,step=w+gap,jitter=(Math.random()-.5)*w*.42,x=spinner.clientWidth/2-(winnerIndex*step+w/2)+jitter;reel.style.transition=`transform ${settings.spinDurationMs}ms cubic-bezier(.08,.64,.06,1)`;reel.style.transform=`translateX(${x}px)`;await wait(settings.spinDurationMs+80);return winner}
+async function spin(){if(spinning)return;const cfg=configMap[select.value],items=pool();if(!cfg||!items.length)return;spinning=true;spinBtn.disabled=true;select.disabled=true;drops.replaceChildren();try{for(let i=0;i<cfg.count;i++){const winner=await rollOnce(items);drops.appendChild(makeDropCard(winner));if(i<cfg.count-1)await wait(settings.pauseBetweenRollsMs)}}finally{spinning=false;spinBtn.disabled=false;select.disabled=false}}
+populateSelect(select,configMap,preferred);select.addEventListener("change",centerIdle);spinBtn.addEventListener("click",spin);window.addEventListener("resize",centerIdle);centerIdle()}
+function renderTiers(containerId,items,groups){const root=document.getElementById(containerId);root.replaceChildren();groups.forEach(group=>{const list=items.filter(item=>item.stars===group.stars);if(!list.length)return;const block=document.createElement("section");block.className="tier-block";const h3=document.createElement("h3");h3.textContent=group.title;const grid=document.createElement("div");grid.className="grid";list.forEach(item=>{const card=document.createElement("article");card.className="tier-card";card.title=item.name;const imageWrap=document.createElement("div");imageWrap.className="tier-image";const img=document.createElement("img");img.src=item.image;img.alt=item.name;img.draggable=false;const name=document.createElement("div");name.className="tier-name";name.textContent=item.name;imageWrap.appendChild(img);card.append(imageWrap,name);grid.appendChild(card)});block.append(h3,grid);root.appendChild(block)})}
 
-  function pool(){
-    const cfg=configMap[select.value];
-    return cfg?cfg.ids.map(id=>itemMap.get(id)).filter(Boolean):[];
-  }
-
-  function centerIdle(){
-    if(spinning)return;
-    const items=pool();
-    reel.style.transition="none";
-    reel.replaceChildren();
-    if(!items.length)return;
-    const seq=[];
-    for(let i=0;i<14;i++)seq.push(items[i%items.length]);
-    seq.forEach(item=>reel.appendChild(makeReelCard(item)));
-    requestAnimationFrame(()=>{
-      const first=reel.querySelector(".reel-card");
-      if(!first)return;
-      const w=first.getBoundingClientRect().width;
-      const gap=parseFloat(getComputedStyle(reel).gap)||0;
-      const step=w+gap;
-      const index=Math.min(4,seq.length-1);
-      reel.style.transform=`translateX(${spinner.clientWidth/2-(index*step+w/2)}px)`;
-    });
-  }
-
-  async function rollOnce(items){
-    const total=58,winnerIndex=total-7,winner=randomItem(items);
-    const seq=Array.from({length:total},()=>randomItem(items));
-    seq[winnerIndex]=winner;
-    reel.style.transition="none";
-    reel.style.transform="translateX(0px)";
-    reel.replaceChildren(...seq.map(makeReelCard));
-    await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
-    const first=reel.querySelector(".reel-card");
-    const w=first.getBoundingClientRect().width;
-    const gap=parseFloat(getComputedStyle(reel).gap)||0;
-    const step=w+gap;
-    const jitter=(Math.random()-.5)*w*.42;
-    const x=spinner.clientWidth/2-(winnerIndex*step+w/2)+jitter;
-    reel.style.transition=`transform ${settings.spinDurationMs}ms cubic-bezier(.08,.64,.06,1)`;
-    reel.style.transform=`translateX(${x}px)`;
-    await wait(settings.spinDurationMs+80);
-    return winner;
-  }
-
-  async function spin(){
-    if(spinning)return;
-    const cfg=configMap[select.value],items=pool();
-    if(!cfg||!items.length)return;
-    spinning=true;spinBtn.disabled=true;select.disabled=true;drops.replaceChildren();
-    try{
-      for(let i=0;i<cfg.count;i++){
-        const winner=await rollOnce(items);
-        drops.appendChild(makeDropCard(winner));
-        if(i<cfg.count-1)await wait(settings.pauseBetweenRollsMs);
-      }
-    }finally{
-      spinning=false;spinBtn.disabled=false;select.disabled=false;
-    }
-  }
-
-  populateSelect(select,configMap,preferred);
-  select.addEventListener("change",centerIdle);
-  spinBtn.addEventListener("click",spin);
-  window.addEventListener("resize",centerIdle);
-  centerIdle();
-}
-function renderTiers(containerId,items,groups){
-  const root=document.getElementById(containerId);
-  root.replaceChildren();
-  groups.forEach(group=>{
-    const list=items.filter(item=>item.stars===group.stars);
-    if(!list.length)return;
-    const block=document.createElement("section");block.className="tier-block";
-    const h3=document.createElement("h3");h3.textContent=group.title;
-    const grid=document.createElement("div");grid.className="grid";
-    list.forEach(item=>{
-      const card=document.createElement("article");card.className="tier-card";card.title=item.name;
-      const imageWrap=document.createElement("div");imageWrap.className="tier-image";
-      const img=document.createElement("img");img.src=item.image;img.alt=item.name;img.draggable=false;
-      const name=document.createElement("div");name.className="tier-name";name.textContent=item.name;
-      imageWrap.appendChild(img);card.append(imageWrap,name);grid.appendChild(card);
-    });
-    block.append(h3,grid);root.appendChild(block);
-  });
-}
-
-    const itemMap=new Map(PAGE_DATA.items.map(item=>[item.id,item]));
-    setupSpinner({
-      selectId:"tierSelect",
-      spinId:"spinButton",
-      spinnerId:"spinner",
-      reelId:"reel",
-      dropsId:"drops",
-      configMap:PAGE_DATA.tiers,
-      itemMap,
-      preferred:"Tier 1.5",
-      settings:PAGE_DATA.settings
-    });
-    renderTiers("tierList",PAGE_DATA.items,[{stars:1,title:"1 Star Weapons"},{stars:2,title:"2 Star Weapons"},{stars:3,title:"3 Star Weapons"},{stars:4,title:"4 Star Weapons"},{stars:5,title:"5 Star Weapons"},{stars:0,title:"Special Weapons"}]);
-  </script>
-</body>
-</html>
+const itemMap=new Map(PAGE_DATA.items.map(item=>[item.id,item]));
+setupSpinner({selectId:"tierSelect",spinId:"spinButton",spinnerId:"spinner",reelId:"reel",dropsId:"drops",configMap:PAGE_DATA.tiers,itemMap,preferred:"Tier 1.5",settings:PAGE_DATA.settings});
+renderTiers("tierList",PAGE_DATA.items,[{stars:1,title:"1 Star Weapons"},{stars:2,title:"2 Star Weapons"},{stars:3,title:"3 Star Weapons"},{stars:4,title:"4 Star Weapons"},{stars:5,title:"5 Star Weapons"},{stars:0,title:"Special Weapons"}]);
+</script>
+</body></html>

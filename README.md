@@ -1,20 +1,18 @@
-# Chicago Gardens Drops V9 - Two Separate Pages
+# Chicago Gardens Drops V10 - Two Pages
 
-This version uses two real pages:
-
-- `index.html` = Faction Drop / Weapons page
-- `drugs.html` = Drug Drop page
-
-Each page has:
-- its own spinner tier dropdown
-- its own spinner
-- its own drop results
-- its own rarity tier list
-
-Faction rules:
-- Test Drop = 1-2 star guns, 2 results
-- Tier 1 = 1-2 star guns, 4 results
-- Tier 1.5 = 1-3 star guns, 4 results
-- Tier 2 = 2-5 star guns, 6 results
-
-Upload every file in this folder to the root of the GitHub repository.
+Updates:
+- Added G17 JoshBlock to Special Weapons
+- Tier 1 keeps all 1-2 star guns and also includes:
+  - XD
+  - Glock 17 Mod
+  - G21 Vector
+- Tier 1.5 keeps all 1-3 star guns and also includes:
+  - Glock 19 ForeGrip
+  - G19x Incog
+  - G40 Camo
+  - PSA Tan Drum
+  - PSA Black Drum
+- Test Drop unchanged
+- Tier 2 unchanged
+- index.html = weapons/faction page
+- drugs.html = drug page
