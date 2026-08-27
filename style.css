@@ -1,0 +1,339 @@
+
+:root {
+  --bg: #0a0a0b;
+  --panel: #111118;
+  --panel-border: #24242d;
+  --text: #ffffff;
+  --purple: #a649ff;
+  --cyan: #35efff;
+  --yellow: #ffe300;
+  --muted: #44444b;
+  --orange: #ff9a35;
+  --card-w: 101px;
+  --card-h: 101px;
+  --gap: 10px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--bg);
+  color: var(--text);
+}
+
+body {
+  font-family: "Orbitron", "Trebuchet MS", Arial, sans-serif;
+  font-weight: 400;
+}
+
+button, select { font: inherit; }
+
+.site {
+  width: min(1040px, calc(100% - 34px));
+  margin: 0 auto;
+  padding: 20px 0 70px;
+}
+
+.header {
+  text-align: center;
+}
+
+.header h1 {
+  margin: 0;
+  color: var(--purple);
+  font-size: clamp(25px, 2.55vw, 36px);
+  font-weight: 400;
+  letter-spacing: -1.2px;
+  line-height: 1.25;
+}
+
+.randomizer {
+  margin-top: 22px;
+  text-align: center;
+}
+
+.randomizer h2,
+.tiers > h2 {
+  margin: 0;
+  color: #b34fff;
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.divider {
+  height: 1px;
+  margin-top: 5px;
+  background: #414147;
+}
+
+.randomizer > p,
+.tier-subtitle {
+  margin: 2px 0 9px;
+  color: var(--cyan);
+  font-size: 15px;
+}
+
+.controls {
+  display: flex;
+  min-height: 38px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 15px;
+}
+
+.controls select {
+  height: 35px;
+  min-width: 136px;
+  padding: 0 35px 0 14px;
+  border: 1px solid #454551;
+  border-radius: 5px;
+  outline: none;
+  background: #252530;
+  color: var(--yellow);
+  cursor: pointer;
+}
+
+.controls button {
+  height: 36px;
+  min-width: 72px;
+  padding: 0 17px;
+  border: 2px solid var(--purple);
+  border-radius: 5px;
+  background: #282831;
+  color: #bd5cff;
+  cursor: pointer;
+}
+
+.controls button:hover:not(:disabled) {
+  filter: brightness(1.15);
+}
+
+.controls button:disabled {
+  opacity: .55;
+  cursor: not-allowed;
+}
+
+.spinner {
+  position: relative;
+  width: min(900px, 100%);
+  height: 181px;
+  margin: 18px auto 0;
+  overflow: hidden;
+  border: 1px solid var(--panel-border);
+  border-radius: 14px;
+  background:
+    radial-gradient(circle at 50% 130%, rgba(50, 47, 78, .20), transparent 58%),
+    var(--panel);
+  box-shadow: 0 15px 30px rgba(0,0,0,.35);
+}
+
+.reel {
+  position: absolute;
+  top: 39px;
+  left: 0;
+  display: flex;
+  gap: var(--gap);
+  width: max-content;
+  will-change: transform;
+}
+
+.reel-card {
+  flex: 0 0 var(--card-w);
+  width: var(--card-w);
+  height: var(--card-h);
+  overflow: hidden;
+  border-radius: 9px;
+  background: #18181d;
+}
+
+.reel-card img,
+.drop-card img,
+.tier-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.picker {
+  position: absolute;
+  z-index: 6;
+  top: 28px;
+  left: 50%;
+  width: 3px;
+  height: 124px;
+  transform: translateX(-50%);
+  background: var(--yellow);
+  box-shadow: 0 0 8px rgba(255,227,0,.60);
+  pointer-events: none;
+}
+
+.fade {
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  bottom: 0;
+  width: 75px;
+  pointer-events: none;
+}
+
+.fade-left {
+  left: 0;
+  background: linear-gradient(90deg, #111118 5%, rgba(17,17,24,0));
+}
+
+.fade-right {
+  right: 0;
+  background: linear-gradient(270deg, #111118 5%, rgba(17,17,24,0));
+}
+
+.randomizer h3 {
+  margin: 12px 0 10px;
+  color: var(--yellow);
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.drops {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  min-height: 124px;
+}
+
+.drop-card {
+  position: relative;
+  width: 122px;
+  height: 122px;
+  overflow: hidden;
+  border: 2px solid #4aedff;
+  border-radius: 11px;
+  background: #111118;
+  box-shadow: 0 0 12px rgba(53,239,255,.42);
+  cursor: default;
+}
+
+.drop-name {
+  position: absolute;
+  z-index: 2;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  overflow: hidden;
+  padding: 3px 5px;
+  border: 1px solid rgba(255,255,255,.35);
+  border-radius: 5px;
+  background: rgba(7,7,10,.68);
+  color: #fff;
+  font-size: 10px;
+  line-height: 1.1;
+  text-align: left;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.tiers {
+  margin-top: 48px;
+  text-align: center;
+}
+
+.tier-block {
+  margin-top: 32px;
+}
+
+.tier-block h3 {
+  margin: 0 0 14px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.weapon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(118px, 1fr));
+  gap: 17px 12px;
+}
+
+.tier-card {
+  min-width: 0;
+}
+
+.tier-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #15151b;
+}
+
+.tier-card .name {
+  margin-top: 7px;
+  overflow: hidden;
+  color: #f2f2f5;
+  font-size: 10px;
+  line-height: 1.25;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.tier-block.special h3 {
+  color: #ff4baa;
+}
+
+@media (max-width: 640px) {
+  :root {
+    --card-w: 85px;
+    --card-h: 85px;
+    --gap: 8px;
+  }
+
+  .site {
+    width: calc(100% - 18px);
+  }
+
+  .header h1 {
+    font-size: 23px;
+  }
+
+  .controls {
+    flex-wrap: wrap;
+  }
+
+  .spinner {
+    height: 160px;
+  }
+
+  .reel {
+    top: 36px;
+  }
+
+  .picker {
+    top: 25px;
+    height: 110px;
+  }
+
+  .fade {
+    width: 36px;
+  }
+
+  .drop-card {
+    width: 104px;
+    height: 104px;
+  }
+
+  .weapon-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px 8px;
+  }
+}
+
+@media (max-width: 400px) {
+  .weapon-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

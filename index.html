@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Chicago Gardens Weapon Tiers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="site">
+    <header class="header">
+      <h1>Chicago Gardens Weapon Tiers</h1>
+    </header>
+
+    <section class="randomizer">
+      <h2>Randomize</h2>
+      <div class="divider"></div>
+      <p>Simulate a faction drop spin</p>
+
+      <div class="controls">
+        <label for="tierSelect">Choose Tier:</label>
+        <select id="tierSelect"></select>
+        <button id="spinButton" type="button">Spin</button>
+      </div>
+
+      <div class="spinner" id="spinner">
+        <div class="fade fade-left"></div>
+        <div class="fade fade-right"></div>
+        <div class="reel" id="reel"></div>
+        <div class="picker"></div>
+      </div>
+
+      <h3>Your drops</h3>
+      <div class="drops" id="drops" aria-live="polite"></div>
+    </section>
+
+    <section class="tiers">
+      <h2>Weapon Tiers</h2>
+      <div class="divider"></div>
+      <p class="tier-subtitle">Chicago Gardens weapon rarity list</p>
+      <div id="tierSections"></div>
+    </section>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
